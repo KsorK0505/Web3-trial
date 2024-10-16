@@ -1,5 +1,6 @@
 import React from "react";
 import axios from 'axios';
+import {toast} from 'react-toastify'
 function SignUpForm() {
   const [state, setState] = React.useState({
     name: "",
@@ -19,9 +20,9 @@ function SignUpForm() {
 
     const { name, email, password } = state;
     let url = process.env.REACT_APP_serverURL + 'api/auth/register';
-    console.log("url",url)
     const response = axios.post(url,{username: name, useremail: email, userpassword: password})
     
+    toast.error(response);
 
     for (const key in state) {
       setState({

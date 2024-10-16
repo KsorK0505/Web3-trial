@@ -26,7 +26,27 @@ router.get('/', auth, async (req, res) => {
 
 router.post('/register',
   async (req, res) => {
-    console.log(req.body)
+    const {username, useremail, userpassword} = req.body;
+    const found=await User.findOne({$or:[{email:useremail}, {name: username}] });
+    if(!found) {
+      res.send({message: "User already Registered"})
+    }
+    else {
+      const createUser = new User({
+        name: username,
+        email: useremail,
+        password: userpassword
+      });
+      console.log("CreateUser",createUser);
+      createUser.save((err) => {
+        if(err) {
+          res.send(err)
+        }
+        else {
+          res.send({message: "Account Created"})
+        }
+      });
+    }
   }
 )
 
