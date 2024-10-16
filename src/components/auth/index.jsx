@@ -21,12 +21,12 @@ export default function App1() {
         <div className="overlay-container">
           <div className="overlay">
             <div className="overlay-panel overlay-left">
-              <h1>Welcome Back!</h1>
-              <p>
+              <h1 className="auth-h1">Welcome Back!</h1>
+              <p className="auth-p">
                 To keep connected with us please login with your personal info
               </p>
               <button
-                className="ghost"
+                className="auth-button"
                 id="signIn"
                 onClick={() => handleOnClick("signIn")}
               >
@@ -34,10 +34,10 @@ export default function App1() {
               </button>
             </div>
             <div className="overlay-panel overlay-right">
-              <h1>Hello, Friend!</h1>
-              <p>Enter your personal details and start journey with us</p>
+              <h1 className="auth-h1">Hello, Friend!</h1>
+              <p className="auth-p">Enter your personal details and start journey with us</p>
               <button
-                className="ghost "
+                className="auth-button"
                 id="signUp"
                 onClick={() => handleOnClick("signUp")}
               >

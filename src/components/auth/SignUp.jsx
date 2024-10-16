@@ -31,26 +31,27 @@ function SignUpForm() {
 
   return (
     <div className="form-container sign-up-container">
-      <form onSubmit={handleOnSubmit}>
-        <h1>Create Account</h1>
+      <form onSubmit={handleOnSubmit} className="auth-form">
+        <h1 className="auth-h1">Create Account</h1>
         <div className="social-container">
-          <a href="#" className="social">
+          <a href="#" className="auth-a">
             <i className="fab fa-facebook-f" />
           </a>
-          <a href="#" className="social">
-            <i className="fab fa-google-plus-g" />
+          <a href="#" className="auth-a">
+            <i className="fab fa-google" />
           </a>
-          <a href="#" className="social">
+          <a href="#" className="auth-a">
             <i className="fab fa-linkedin-in" />
           </a>
         </div>
-        <span>or use your email for registration</span>
+        <span className="auth-span">or use your email for registration</span>
         <input
           type="text"
           name="name"
           value={state.name}
           onChange={handleChange}
           placeholder="Name"
+          className="auth-input"
         />
         <input
           type="email"
@@ -58,6 +59,7 @@ function SignUpForm() {
           value={state.email}
           onChange={handleChange}
           placeholder="Email"
+          className="auth-input"
         />
         <input
           type="password"
@@ -65,8 +67,9 @@ function SignUpForm() {
           value={state.password}
           onChange={handleChange}
           placeholder="Password"
+          className="auth-input"
         />
-        <button>Sign Up</button>
+        <button className="auth-button1">Sign Up</button>
       </form>
     </div>
   );

@@ -17,16 +17,16 @@
     box-sizing: border-box;
   }
   
-  h1 {
+  .auth-h1 {
     font-weight: bold;
     margin: 0;
   }
   
-  h2 {
+  .auth-h2 {
     text-align: center;
   }
   
-  p {
+  .auth-p {
     font-size: 14px;
     font-weight: 100;
     line-height: 20px;
@@ -34,18 +34,32 @@
     margin: 20px 0 30px;
   }
   
-  span {
+  .auth-span {
     font-size: 12px;
   }
   
-  a {
-    color: #333;
-    font-size: 14px;
+  .auth-a {
+    font-size: 20px;
     text-decoration: none;
     margin: 15px 0;
   }
   
-  button {
+  .auth-button {
+    border-radius: 20px;
+    border: 1px solid #ff4b2b;
+    background-color: #ff4b2b;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    background-color: transparent;
+    border-color: #ffffff;
+  }
+
+  .auth-button1 {
     border-radius: 20px;
     border: 1px solid #ff4b2b;
     background-color: #ff4b2b;
@@ -58,20 +72,15 @@
     transition: transform 80ms ease-in;
   }
   
-  button:active {
+  .auth-button:active {
     transform: scale(0.95);
   }
   
-  button:focus {
+  .auth-button:focus {
     outline: none;
   }
   
-  button.ghost {
-    background-color: transparent;
-    border-color: #ffffff;
-  }
-  
-  form {
+  .auth-form {
     background-color: #ffffff;
     display: flex;
     align-items: center;
@@ -82,7 +91,7 @@
     text-align: center;
   }
   
-  input {
+  .auth-input {
     background-color: #eee;
     border: none;
     padding: 12px 15px;
@@ -228,7 +237,7 @@
     width: 40px;
   }
   
-  footer {
+  .auth-footer {
     background-color: #222;
     color: #fff;
     font-size: 14px;
@@ -240,15 +249,15 @@
     z-index: 999;
   }
   
-  footer p {
+  .auth-footer p {
     margin: 10px 0;
   }
   
-  footer i {
+  .auth-footer i {
     color: red;
   }
   
-  footer a {
+  .auth footer a {
     color: #3c97bf;
     text-decoration: none;
   }
