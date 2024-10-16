@@ -23,6 +23,13 @@ router.get('/', auth, async (req, res) => {
 
 // @route    POST api/auth
 // @desc     Authenticate user & get token
+
+router.post('/register',
+  async (req, res) => {
+    console.log(req.body)
+  }
+)
+
 // @access   Public
 router.post(
   '/',

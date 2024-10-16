@@ -6,7 +6,7 @@ const cors = require('cors');
 const app = express();
 
 // Connect Database
-connectDB();
+ connectDB();
 
 // Init Middleware
 app.use(express.json());
@@ -20,7 +20,7 @@ app.use('/api/users', require('./server/routes/api/users'));
 app.use('/api/auth', require('./server/routes/api/auth'));
 app.use('/api/profile', require('./server/routes/api/profile'));
 app.use('/api/posts', require('./server/routes/api/posts'));
-app.use('/api/tokens', require('./server/routes/api/tokens'));
+app.use('/api/tokens', require('./server/routes/api/tokens')); 
 app.use('/api/token-pairs', require('./server/routes/api/tokenPairs'));
 
 // Serve static assets in production

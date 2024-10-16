@@ -1,4 +1,5 @@
 import React from "react";
+import axios from 'axios';
 function SignUpForm() {
   const [state, setState] = React.useState({
     name: "",
@@ -17,9 +18,10 @@ function SignUpForm() {
     evt.preventDefault();
 
     const { name, email, password } = state;
-    alert(
-      `You are sign up with name: ${name} email: ${email} and password: ${password}`
-    );
+    let url = process.env.REACT_APP_serverURL + 'api/auth/register';
+    console.log("url",url)
+    const response = axios.post(url,{username: name, useremail: email, userpassword: password})
+    
 
     for (const key in state) {
       setState({
