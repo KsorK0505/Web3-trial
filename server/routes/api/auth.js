@@ -28,7 +28,7 @@ router.post('/register',
   async (req, res) => {
     const {username, useremail, userpassword} = req.body;
     const found=await User.findOne({$or:[{email:useremail}, {name: username}] });
-    if(!found) {
+    if(found) {
       res.send({message: "User already Registered"})
     }
     else {
@@ -37,7 +37,6 @@ router.post('/register',
         email: useremail,
         password: userpassword
       });
-      console.log("CreateUser",createUser);
       createUser.save((err) => {
         if(err) {
           res.send(err)
@@ -49,6 +48,17 @@ router.post('/register',
     }
   }
 )
+
+router.post('/login', async(req,res) => {
+  const {useremail,userpassword} = req.body;
+  const found = await User.findOne({email:useremail});
+  if(found) {
+    if(found.password === userpassword) {
+      res.send({message: "success"})
+    }
+  }
+  res.send({message:"failed"})
+})
 
 // @access   Public
 router.post(

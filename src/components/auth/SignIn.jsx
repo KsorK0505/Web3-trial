@@ -1,5 +1,8 @@
 import React from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 function SignInForm() {
+  const navigate = useNavigate();
   const [state, setState] = React.useState({
     email: "",
     password: ""
@@ -10,13 +13,21 @@ function SignInForm() {
       ...state,
       [evt.target.name]: value
     });
-  };
-
-  const handleOnSubmit = evt => {
-    evt.preventDefault();
+  }; 
+  const handleOnSubmit = async(evt) => {
+    evt.preventDefault(); 
 
     const { email, password } = state;
-    alert(`You are login with email: ${email} and password: ${password}`);
+    
+    let url = process.env.REACT_APP_serverURL + 'api/auth/login';
+
+    const response = await axios.post(url,{useremail:email,userpassword:password})
+
+    if(response.data.message === "success") {
+      navigate('\main');
+    } else{
+      alert("username or userpassword is wrong");
+    }
 
     for (const key in state) {
       setState({
